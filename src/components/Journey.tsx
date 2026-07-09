@@ -105,7 +105,7 @@ export default function Journey() {
             <rect x="671" y="26" width="9" height="72" rx="3" fill="var(--roadedge)" />
             <rect x="308" y="32" width="384" height="40" rx="9" fill="var(--card)" stroke="url(#gline)" strokeWidth="1.5" />
             <text x="492" y="57" textAnchor="middle" fill="var(--ink)" fontFamily="var(--mono)" fontSize="14" letterSpacing="2.5">
-              UC DAVIS SECTOR · 2022 – 2026
+              UC DAVIS SECTOR · 2023 – 2026
             </text>
             <circle cx="668" cy="52" r="9" fill="none" stroke="var(--mut)" strokeWidth="1.3" />
             <text x="668" y="56" textAnchor="middle" fill="var(--mut)" fontFamily="var(--mono)" fontSize="11">i</text>

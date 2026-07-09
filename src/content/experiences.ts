@@ -6,7 +6,7 @@ export const stops: Stop[] = [
     slug: 'ecocar',
     org: 'EcoCAR at UC Davis',
     role: 'Undergraduate Software Lead, CAV',
-    dates: 'Jan 2024 – present',
+    dates: 'Jan 2024 – Jun 2026',
     location: 'Davis, CA',
     blurb: 'Leading the autonomy software for a Cadillac LYRIQ — the car this whole site is themed after.',
     cardBlurb: 'Software lead for a 15-person autonomy team turning a Cadillac LYRIQ into a connected autonomous vehicle.',

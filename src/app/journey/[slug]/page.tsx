@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { adjacentStops, getStop, stops } from '@/content/experiences';
 import type { Stop } from '@/content/types';
 import CdkSynth from '@/components/interactives/CdkSynth';
+import LyriqViewer from '@/components/interactives/LyriqViewer';
 import PhoneDemo from '@/components/interactives/PhoneDemo';
-import SensorViewer from '@/components/interactives/SensorViewer';
 import SpinMark from '@/components/interactives/SpinMark';
 import Terminal from '@/components/interactives/Terminal';
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 function Interactive({ stop }: { stop: Stop }) {
   switch (stop.interactive) {
-    case 'sensor-viewer': return <SensorViewer />;
+    case 'sensor-viewer': return <LyriqViewer />;
     case 'cdk-synth': return <CdkSynth />;
     case 'phone-demo': return <PhoneDemo />;
     case 'terminal': return <Terminal />;
