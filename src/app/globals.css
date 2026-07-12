@@ -18,7 +18,7 @@
   --line: #E6E5E0; --road: #23252F; --roadedge: #454857; --dash: #F2F2EE; --spec-bg: #F0EFE9; }
 
 * { box-sizing: border-box; }
-html { background: var(--bg); scroll-behavior: smooth; }
+html { background: var(--bg); scroll-behavior: smooth; overflow-x: hidden; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-size: 15.5px; line-height: 1.65;
   font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 .wrap { max-width: 1020px; margin: 0 auto; padding: 0 22px; }
@@ -43,16 +43,18 @@ header.site { position: sticky; top: 0; z-index: 30; background: color-mix(in sr
 .btn:hover { transform: translateY(-1px); border-color: var(--g2); }
 .btn:focus-visible, .nav a:focus-visible, button:focus-visible { outline: 2px solid var(--g2); outline-offset: 2px; }
 
-.hero { position: relative; padding: 96px 0 56px; border-radius: 24px;
+.hero { position: relative; padding: 96px 0 56px; border-radius: 24px; overflow: hidden;
   background: radial-gradient(52% 48% at 88% 0%, color-mix(in srgb, var(--g1) 26%, transparent), transparent),
               radial-gradient(44% 44% at 56% 38%, color-mix(in srgb, var(--g3) 16%, transparent), transparent); }
+/* Home hero only: background stretches edge-to-edge; inner .wrap keeps content aligned to the reading column. */
+.hero-bleed { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); border-radius: 0 0 24px 24px; }
 .heroGrid { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 36px; align-items: center; }
-.portrait { margin: 0; width: clamp(170px, 24vw, 290px); }
-.portrait .ring { aspect-ratio: 1; border-radius: 50%; padding: 7px; background: var(--grad); }
-.portrait .inner { width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 44px; color: var(--mut); border: 5px solid var(--bg); overflow: hidden;
+.portrait { margin: 0; width: clamp(170px, 24vw, 290px); flex-shrink: 0; }
+.portrait .ring { width: 100%; aspect-ratio: 1; border-radius: 50%; padding: 7px; background: var(--grad); overflow: hidden; }
+.portrait .inner { position: relative; width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-weight: 800; font-size: 44px; color: var(--mut); border: 5px solid var(--bg); overflow: hidden;
   background: radial-gradient(60% 60% at 35% 30%, color-mix(in srgb, var(--g2) 24%, var(--spec-bg)), var(--spec-bg)); }
-.portrait .inner img { width: 100%; height: 100%; object-fit: cover; }
+.portrait .inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .pcap { text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px;
   text-transform: uppercase; color: var(--mut); margin-top: 10px; }
 @media (max-width: 800px) { .heroGrid { grid-template-columns: 1fr; } .portrait { width: 150px; order: -1; } }
