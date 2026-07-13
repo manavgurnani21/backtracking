@@ -41,7 +41,7 @@ export const stops: Stop[] = [
     hue: '#FF4500',
     logoTitle: 'Reddit logo — standard source',
     cluster: 'industry',
-    interactive: 'phone-demo',
+    interactive: 'app-demo',
   },
   {
     slug: 'aws',

@@ -4,33 +4,46 @@ Placeholders are live in the hi-fi mockup for everything below. Drop files into 
 (suggested paths shown) or paste links in chat; each one slots in without design changes.
 
 ## Priority 1 — biggest visual impact
-| # | Asset | Spec | Target path | Status |
-|---|-------|------|-------------|--------|
-| 1 | Solidigm logo | SVG or transparent PNG | `public/assets/logos/solidigm.svg` | ☐ pending |
-| 2 | VectorEdge logo | SVG or transparent PNG | `public/assets/logos/vectoredge.svg` | ☐ pending |
-| 3 | Cody Codelab logo | SVG or transparent PNG | `public/assets/logos/cody.svg` | ☐ pending |
-| 4 | UC Davis / EV Challenge logo (EcoCAR) | SVG or transparent PNG | `public/assets/logos/ecocar.svg` | ☐ pending |
-| 5 | LYRIQ renders | 2–3 screenshots of the GLB: front ¾, side, top-down (PNG, ≥1200px wide) | `public/assets/lyriq/` | ☐ pending |
-| 6 | LYRIQ GLB file | The model itself (will be optimized: Draco/meshopt + KTX2) | `public/models/lyriq.glb` | ☐ in hand — needs drop into repo |
-| 7 | Reddit Devvit app visuals | Screenshots or short screen recording of the real app | `public/assets/reddit/` | ☐ pending |
-| 8 | About photos | You + the LYRIQ; one personal/team shot (JPG/PNG) | `public/assets/about/` | ☐ pending |
+
+
+| #   | Asset                                 | Spec                                                                    | Target path                          | Status  |
+| --- | ------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------ | ------- |
+| 1   | Solidigm logo                         | SVG or transparent PNG                                                  | `public/assets/logos/solidigm.svg`   | pending |
+| 2   | VectorEdge logo                       | SVG or transparent PNG                                                  | `public/assets/logos/vectoredge.svg` | pending |
+| 3   | Cody Codelab logo                     | SVG or transparent PNG                                                  | `public/assets/logos/cody.svg`       | pending |
+| 4   | UC Davis / EV Challenge logo (EcoCAR) | SVG or transparent PNG                                                  | `public/assets/logos/ecocar.svg`     | pending |
+| 5   | LYRIQ renders                         | 2–3 screenshots of the GLB: front ¾, side, top-down (PNG, ≥1200px wide) | `public/assets/lyriq/`               | done    |
+| 6   | LYRIQ GLB file                        | The model itself (will be optimized: Draco/meshopt + KTX2)              | `public/models/lyriq.glb`            | done    |
+| 7   | Reddit Devvit app visuals             | Screenshots or short screen recording of the real app                   | `public/assets/reddit/`              | done    |
+| 8   | About photos                          | You + the LYRIQ; one personal/team shot (JPG/PNG)                       | `public/assets/about/`               | pending |
+
+
+
 
 ## Priority 2 — content & links
-| # | Item | Notes | Status |
-|---|------|-------|--------|
-| 9 | Copy sign-off | Tagline ("Follow the road."), About draft, quick-facts voice — bless or redline | ☐ pending |
-| 10 | AWS PR links | Rendered as reference chips on the AWS stop | ☐ pending |
-| 11 | Reddit repo link | Chip on the Reddit stop | ☐ pending |
-| 12 | DataScout video + Devpost link | Video thumbnail on the Garage card | ☐ pending |
-| 13 | CodyAI demo/video (optional) | Upgrades Bay 03 from rotating gallery | ☐ pending |
+
+
+| #   | Item                           | Notes                                                                           | Status  |
+| --- | ------------------------------ | ------------------------------------------------------------------------------- | ------- |
+| 9   | Copy sign-off                  | Tagline ("Follow the road."), About draft, quick-facts voice — bless or redline | pending |
+| 10  | AWS PR links                   | Rendered as reference chips on the AWS stop                                     | pending |
+| 11  | Reddit repo link               | Chip on the Reddit stop                                                         | pending |
+| 12  | DataScout video + Devpost link | Video thumbnail on the Garage card                                              | pending |
+| 13  | CodyAI demo/video (optional)   | Upgrades Bay 03 from rotating gallery                                           | pending |
+
+
+
 
 ## Priority 3 — decisions (no files needed)
-| # | Decision | Default if no preference | Status |
-|---|----------|--------------------------|--------|
-| 14 | Webfont pairing | I pick a modern grotesque + mono for the real build | ☐ open |
-| 15 | Domain name | Deploys to `*.vercel.app` until chosen | ☐ open |
-| 16 | Final résumé PDF | Download button target | ☐ pending |
-| 17 | AWS CDK synth: exact resources shown | Current mock: API GW, Cognito, router, 3 Lambdas | ☐ open |
-| 18 | EcoCAR: which sensors to highlight | Current mock: camera FOV, corner radar, lidar | ☐ open |
+
+
+| #   | Decision                             | Default if no preference                            | Status  |
+| --- | ------------------------------------ | --------------------------------------------------- | ------- |
+| 14  | Webfont pairing                      | I pick a modern grotesque + mono for the real build | open    |
+| 15  | Domain name                          | Deploys to `*.vercel.app` until chosen              | open    |
+| 16  | Final résumé PDF                     | Download button target                              | pending |
+| 17  | AWS CDK synth: exact resources shown | Current mock: API GW, Cognito, router, 3 Lambdas    | open    |
+| 18  | EcoCAR: which sensors to highlight   | Current mock: camera FOV, corner radar, lidar       | done    |
+
 
 **Not needed:** any 3D model other than the LYRIQ; logo design (DataScout mark is being designed in-mockup); AWS/Reddit/UC Davis marks (standard sources).

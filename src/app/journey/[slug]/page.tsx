@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { adjacentStops, getStop, stops } from '@/content/experiences';
 import type { Stop } from '@/content/types';
+import AppDemo from '@/components/interactives/AppDemo';
 import CdkSynth from '@/components/interactives/CdkSynth';
 import LyriqViewer from '@/components/interactives/LyriqViewer';
-import PhoneDemo from '@/components/interactives/PhoneDemo';
 import SpinMark from '@/components/interactives/SpinMark';
 import Terminal from '@/components/interactives/Terminal';
 
@@ -26,7 +26,7 @@ function Interactive({ stop }: { stop: Stop }) {
   switch (stop.interactive) {
     case 'sensor-viewer': return <LyriqViewer />;
     case 'cdk-synth': return <CdkSynth />;
-    case 'phone-demo': return <PhoneDemo />;
+    case 'app-demo': return <AppDemo />;
     case 'terminal': return <Terminal />;
     case 'spin': return <SpinMark letter={stop.initials[0]} />;
     default: return null;

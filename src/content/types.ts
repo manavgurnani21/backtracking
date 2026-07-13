@@ -3,7 +3,7 @@ export type Cluster = 'industry' | 'cars' | 'research';
 export type InteractiveKind =
   | 'sensor-viewer' // EcoCAR — 2D now, R3F GLB in Phase 3
   | 'cdk-synth'     // AWS
-  | 'phone-demo'    // Reddit
+  | 'app-demo'      // Reddit — real screen recording, widescreen web/Devvit UI
   | 'terminal'      // VectorEdge
   | 'spin'          // Solidigm
   | 'none';
