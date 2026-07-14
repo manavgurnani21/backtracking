@@ -6,7 +6,7 @@ import type { Stop } from '@/content/types';
 import AppDemo from '@/components/interactives/AppDemo';
 import CdkSynth from '@/components/interactives/CdkSynth';
 import LyriqViewer from '@/components/interactives/LyriqViewer';
-import SpinMark from '@/components/interactives/SpinMark';
+import SolidigmViewer from '@/components/interactives/SolidigmViewer';
 import Terminal from '@/components/interactives/Terminal';
 
 export function generateStaticParams() {
@@ -28,7 +28,7 @@ function Interactive({ stop }: { stop: Stop }) {
     case 'cdk-synth': return <CdkSynth />;
     case 'app-demo': return <AppDemo />;
     case 'terminal': return <Terminal />;
-    case 'spin': return <SpinMark letter={stop.initials[0]} />;
+    case 'logo-3d': return <SolidigmViewer />;
     default: return null;
   }
 }
@@ -50,7 +50,14 @@ export default async function StopPage({ params }: { params: Promise<{ slug: str
       <div className="stopband"
         style={{ background: `radial-gradient(70% 130% at 8% 0%, color-mix(in srgb, ${stop.hue} 13%, transparent), transparent)` }}>
         <div className="stophead">
-          <span className="lg" style={tile} title={stop.logoTitle}>{stop.initials}</span>
+          <span className="lg" style={tile} title={stop.logoTitle}>
+            {stop.logo ? (
+              <>
+                <img src={stop.logo} alt="" className={stop.logoDark ? 'logo-light' : undefined} />
+                {stop.logoDark && <img src={stop.logoDark} alt="" className="logo-dark" />}
+              </>
+            ) : stop.initials}
+          </span>
           <div>
             <p className="eyebrow" style={{ margin: '0 0 4px' }}>{stop.dates} · {stop.location} · {stop.role}</p>
             <h2 className="sect" style={{ margin: 0 }}>

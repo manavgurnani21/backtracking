@@ -9,9 +9,8 @@ export default function Home() {
         <div className="wrap">
           <div className="heroGrid">
             <div>
-              <p className="eyebrow">Software engineer · ML systems · UC Davis &apos;26</p>
+              <p className="tagline gtext">Hi, I&apos;m</p>
               <h1 className="name">Manav<br />Gurnani</h1>
-              <p className="tagline gtext">Follow the road.</p>
               <p className="lede">
                 I build ML systems, cloud infrastructure, and the software brains of an autonomous Cadillac. This site
                 is the road trip through all of it — scroll to travel the journey, or jump straight to any stop.

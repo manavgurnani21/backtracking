@@ -8,6 +8,8 @@ import { stops, education } from '@/content/experiences';
 const PIN_Y = [260, 480, 760, 1010, 1260];
 const CARD_TOP = ['15%', '30%', '48.5%', '65.5%', '82.5%'];
 const MILE_MARKERS: Array<[number, string]> = [[200, '2026'], [700, '2025'], [1380, '2024']];
+const MARKER_R = 22;
+const MARKER_CX = { left: 418, right: 582 };
 
 function tileStyle(hue: string) {
   return {
@@ -80,12 +82,6 @@ export default function Journey() {
             </filter>
           </defs>
 
-          <g fontFamily="var(--mono)" fontSize="13" letterSpacing="2">
-            <circle cx="930" cy="84" r="26" fill="none" stroke="var(--mut)" strokeWidth="1.5" />
-            <path d="M930 64 l6 20 l-6 -5 l-6 5 z" fill="url(#gline)" />
-            <text x="930" y="128" textAnchor="middle" fill="var(--mut)">N</text>
-          </g>
-
           <rect x="330" y="0" width="340" height="1480" fill="var(--road)" />
           <rect x="330" y="0" width="340" height="1480" filter="url(#grain)" opacity="0.5" />
           <rect x="342" y="0" width="5" height="1480" fill="var(--dash)" opacity="0.9" />
@@ -123,14 +119,30 @@ export default function Journey() {
           <g fontFamily="var(--mono)" fontSize="9.5" fontWeight="700">
             {stops.map((s, i) => {
               const left = i % 2 === 0;
-              const cx = left ? 347 : 655;
+              const cx = left ? MARKER_CX.left : MARKER_CX.right;
+              const cy = PIN_Y[i];
+              const r = MARKER_R;
+              const logoSize = r * 1.3;
               return (
                 <g key={s.slug} style={{ cursor: 'pointer' }} role="link" tabIndex={0}
                   aria-label={`${s.org} — open stop`}
                   onClick={() => router.push(`/journey/${s.slug}`)}
                   onKeyDown={(e) => { if (e.key === 'Enter') router.push(`/journey/${s.slug}`); }}>
-                  <circle cx={cx} cy={PIN_Y[i]} r="17" fill="var(--card)" stroke="url(#gline)" strokeWidth="4" />
-                  <text x={cx} y={PIN_Y[i] + 4} textAnchor="middle" fill="var(--ink)">{s.initials}</text>
+                  <circle cx={cx} cy={cy} r={r} fill="var(--card)" stroke="url(#gline)" strokeWidth="4" />
+                  {s.logo ? (
+                    <>
+                      <image href={s.logo} x={cx - logoSize / 2} y={cy - logoSize / 2}
+                        width={logoSize} height={logoSize} preserveAspectRatio="xMidYMid meet"
+                        className={s.logoDark ? 'road-logo road-logo-light' : 'road-logo'} />
+                      {s.logoDark && (
+                        <image href={s.logoDark} x={cx - logoSize / 2} y={cy - logoSize / 2}
+                          width={logoSize} height={logoSize} preserveAspectRatio="xMidYMid meet"
+                          className="road-logo road-logo-dark" />
+                      )}
+                    </>
+                  ) : (
+                    <text x={cx} y={cy + 4} textAnchor="middle" fill="var(--ink)">{s.initials}</text>
+                  )}
                 </g>
               );
             })}
@@ -139,8 +151,8 @@ export default function Journey() {
             {stops.map((s, i) => {
               const left = i % 2 === 0;
               return left
-                ? <line key={s.slug} x1="330" y1={PIN_Y[i]} x2="298" y2={PIN_Y[i]} />
-                : <line key={s.slug} x1="672" y1={PIN_Y[i]} x2="704" y2={PIN_Y[i]} />;
+                ? <line key={s.slug} x1={MARKER_CX.left - MARKER_R} y1={PIN_Y[i]} x2="298" y2={PIN_Y[i]} />
+                : <line key={s.slug} x1={MARKER_CX.right + MARKER_R} y1={PIN_Y[i]} x2="704" y2={PIN_Y[i]} />;
             })}
           </g>
 
@@ -160,7 +172,6 @@ export default function Journey() {
           const left = i % 2 === 0;
           return (
             <div key={s.slug} className="stop-card reveal" style={{ left: left ? '2%' : '71%', top: CARD_TOP[i] }}>
-              <span className="lg" style={tileStyle(s.hue)} title={s.logoTitle}>{s.initials}</span>
               <div className="meta">{s.dates} · {s.location}</div>
               <h3>{s.org}</h3>
               <p>{s.cardBlurb}</p>

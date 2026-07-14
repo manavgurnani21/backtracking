@@ -10,13 +10,15 @@ export const metadata: Metadata = {
 export default function GaragePage() {
   return (
     <>
-      <div className="hero" style={{ padding: '52px 0 8px' }}>
-        <p className="eyebrow">Projects &amp; research</p>
-        <h1 className="page">The <span className="gtext">Garage</span></h1>
-        <p className="lede">
-          Side projects and research live here. Open bays are ready to explore — closed shutters mean work in progress.
-          New builds roll in over time.
-        </p>
+      <div className="hero hero-bleed" style={{ padding: '52px 0 8px' }}>
+        <div className="wrap">
+          <p className="eyebrow">Projects &amp; research</p>
+          <h1 className="page">The <span className="gtext">Garage</span></h1>
+          <p className="lede">
+            Side projects and research live here. Open bays are ready to explore — closed shutters mean work in progress.
+            New builds roll in over time.
+          </p>
+        </div>
       </div>
       <div className="bays">
         <div className="grid">
