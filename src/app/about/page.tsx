@@ -8,9 +8,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="hero" style={{ padding: '52px 0 8px' }}>
-        <p className="eyebrow">About</p>
-        <h1 className="page">Off the clock, I&apos;m still <span className="gtext">thinking about cars.</span></h1>
+      <div className="hero hero-bleed" style={{ padding: '52px 0 8px' }}>
+        <div className="wrap">
+          <p className="eyebrow">About</p>
+          <h1 className="page">Off the clock, I&apos;m still <span className="gtext">thinking about cars.</span></h1>
+        </div>
       </div>
       <div className="about-cols">
         <div className="prose">
@@ -30,8 +32,16 @@ export default function AboutPage() {
           </p>
         </div>
         <div>
-          <div className="photo"><span>Photo — Manav + the LYRIQ · pending</span></div>
-          <div className="photo alt"><span>Photo — team / personal · pending</span></div>
+          <div className="photo photo-lyriq">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/about/1000017581.JPG" alt="Manav with the EcoCAR LYRIQ" />
+            <span>Manav + the LYRIQ</span>
+          </div>
+          <div className="photo alt photo-team">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/about/DSC_4344.jpg" alt="EcoCAR team at UC Davis" />
+            <span>EcoCAR team</span>
+          </div>
           <div className="facts">
             <b>Quick facts</b><br />
             UC Davis · CS &amp; Statistics (ML) · Aug 2026<br />

@@ -4,6 +4,16 @@ import type { Project } from './types';
 // flipping a bay open later is a one-field change.
 export const projects: Project[] = [
   {
+	slug: 'blackboard',
+	title: 'blackboard.ai',
+	shutterTitle: 'BlackBoard.ai',
+	blurb: 'An IEP/504-compliant classroom platform — teachers upload lesson notes, a compliance agent checks them against each students accommodation profile and auto-generates personalized audit-ready lesson variants.',
+	chips: ['Butterbase', 'EverMind OS', 'RAG'],
+	itag: '▶ video demo',
+	status: 'open',
+	tile: 'text',
+  },
+  {
     slug: 'datascout',
     title: 'DataScout',
     shutterTitle: 'DataScout',
@@ -11,7 +21,7 @@ export const projects: Project[] = [
     chips: ['Claude API', 'Lambda', 'CDK'],
     itag: '▶ video demo + Devpost',
     status: 'open',
-    tile: 'datascout',
+    tile: 'text',
   },
   {
     slug: 'emotion-gan',
@@ -23,16 +33,6 @@ export const projects: Project[] = [
     status: 'open',
     tile: 'text',
     tileText: 'UCD',
-  },
-  {
-    slug: 'codyai',
-    title: 'CodyAI',
-    shutterTitle: 'CodyAI',
-    blurb: 'Full-stack RAG chatbot — Next.js App Router, SSR, Gemini + Vercel AI SDK, PostgreSQL.',
-    chips: ['TypeScript', 'Gemini', 'PostgreSQL'],
-    itag: '⟳ rotating gallery',
-    status: 'open',
-    tile: 'pending',
   },
   {
     slug: 'aviran-lab',

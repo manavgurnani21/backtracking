@@ -3,9 +3,9 @@ export type Cluster = 'industry' | 'cars' | 'research';
 export type InteractiveKind =
   | 'sensor-viewer' // EcoCAR — 2D now, R3F GLB in Phase 3
   | 'cdk-synth'     // AWS
-  | 'phone-demo'    // Reddit
+  | 'app-demo'      // Reddit — real screen recording, widescreen web/Devvit UI
   | 'terminal'      // VectorEdge
-  | 'spin'          // Solidigm
+  | 'logo-3d'       // Solidigm — real 3D logo model, rotate/orbit
   | 'none';
 
 export interface StopLink {
@@ -28,6 +28,8 @@ export interface Stop {
   initials: string;
   hue: string; // brand hex used for tinted tiles/bands
   logoTitle: string;
+  logo?: string; // real logo image path; falls back to initials tile when absent
+  logoDark?: string; // dark-mode variant, shown instead of `logo` when the site is in dark mode
   cluster: Cluster;
   interactive: InteractiveKind;
   links?: StopLink[];
